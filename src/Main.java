@@ -7,6 +7,10 @@ public class Main {
         System.out.println("charToNum: " + charToNum('9'));
         System.out.println("isPositive: " + isPositive(3));
         System.out.println("isPositive: " + isPositive(-5));
+        System.out.println("is2Digits: " + is2Digits(-32));
+        System.out.println("is2Digits: " + is2Digits(-516));
+        System.out.println("is2Digits: " + is2Digits(32));
+        System.out.println("is2Digits: " + is2Digits(516));
 
     }
 
@@ -28,6 +32,11 @@ public class Main {
 
     public static boolean isPositive(int x){
         boolean y = x > 0;
+        return y;
+    };
+
+    public static boolean is2Digits(int x){
+        boolean y = (x>0 && x<=99)||(x<0 && x>=-99);
         return y;
     };
 }
