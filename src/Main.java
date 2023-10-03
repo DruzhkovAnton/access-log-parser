@@ -13,6 +13,8 @@ public class Main {
         System.out.println("is2Digits: " + is2Digits(516));
         System.out.println("isUpperCase: " + isUpperCase('A'));
         System.out.println("isUpperCase: " + isUpperCase('q'));
+        System.out.println("isInRange: " + isInRange(5, 1, 3));
+        System.out.println("isInRange: " + isInRange(2, 15, 33));
     }
 
     public static double fraction(double x){
@@ -43,6 +45,11 @@ public class Main {
 
     public static boolean isUpperCase(char x){
         boolean y = (int)x > 64 && (int)x < 91;
+        return y;
+    };
+
+    public static boolean isInRange(int a, int b, int num){
+        boolean y = (num>=a && num <=b)||(num>=b && num <=a);
         return y;
     };
 }
