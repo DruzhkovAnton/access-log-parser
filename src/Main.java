@@ -11,7 +11,8 @@ public class Main {
         System.out.println("is2Digits: " + is2Digits(-516));
         System.out.println("is2Digits: " + is2Digits(32));
         System.out.println("is2Digits: " + is2Digits(516));
-
+        System.out.println("isUpperCase: " + isUpperCase('A'));
+        System.out.println("isUpperCase: " + isUpperCase('q'));
     }
 
     public static double fraction(double x){
@@ -37,6 +38,11 @@ public class Main {
 
     public static boolean is2Digits(int x){
         boolean y = (x>0 && x<=99)||(x<0 && x>=-99);
+        return y;
+    };
+
+    public static boolean isUpperCase(char x){
+        boolean y = (int)x > 64 && (int)x < 91;
         return y;
     };
 }
