@@ -5,6 +5,8 @@ public class Main {
         System.out.println("fraction: " + fraction(5.3));
         System.out.println("sumLastNums: " + sumLastNums(4568));
         System.out.println("charToNum: " + charToNum('9'));
+        System.out.println("isPositive: " + isPositive(3));
+        System.out.println("isPositive: " + isPositive(-5));
 
     }
 
@@ -21,6 +23,11 @@ public class Main {
 
     public static int charToNum(char x){
         int y = (int)x-48;
+        return y;
+    };
+
+    public static boolean isPositive(int x){
+        boolean y = x > 0;
         return y;
     };
 }
