@@ -2,10 +2,9 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        double x = 5.3;
-        int x1 = 4568;
-        System.out.println("fraction: " + fraction(x));
-        System.out.println("sumLastNums: " + sumLastNums(x1));
+        System.out.println("fraction: " + fraction(5.3));
+        System.out.println("sumLastNums: " + sumLastNums(4568));
+        System.out.println("charToNum: " + charToNum('9'));
 
     }
 
@@ -18,5 +17,10 @@ public class Main {
         int y = (x%10);
         int z = (x%100)/10;
         return  y+z;
+    };
+
+    public static int charToNum(char x){
+        int y = (int)x-48;
+        return y;
     };
 }
