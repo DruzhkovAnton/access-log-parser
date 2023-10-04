@@ -15,6 +15,8 @@ public class Main {
         System.out.println("isUpperCase: " + isUpperCase('q'));
         System.out.println("isInRange: " + isInRange(5, 1, 3));
         System.out.println("isInRange: " + isInRange(2, 15, 33));
+        System.out.println("isDivisor: " + isDivisor(3, 6));
+        System.out.println("isDivisor: " + isDivisor(2, 15));
     }
 
     public static double fraction(double x){
@@ -50,6 +52,11 @@ public class Main {
 
     public static boolean isInRange(int a, int b, int num){
         boolean y = (num>=a && num <=b)||(num>=b && num <=a);
+        return y;
+    };
+
+    public static boolean isDivisor (int a, int b){
+        boolean y = (((int)a/b)-((double)a/b) == 0)||(((int)b/a)-((double)b/a) == 0);
         return y;
     };
 }
