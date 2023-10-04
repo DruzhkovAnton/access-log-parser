@@ -17,6 +17,8 @@ public class Main {
         System.out.println("isInRange: " + isInRange(2, 15, 33));
         System.out.println("isDivisor: " + isDivisor(3, 6));
         System.out.println("isDivisor: " + isDivisor(2, 15));
+        System.out.println("isEqual: " + isEqual(3, 3,3));
+        System.out.println("isEqual: " + isEqual(2, 15,2));
     }
 
     public static double fraction(double x){
@@ -57,6 +59,11 @@ public class Main {
 
     public static boolean isDivisor (int a, int b){
         boolean y = (((int)a/b)-((double)a/b) == 0)||(((int)b/a)-((double)b/a) == 0);
+        return y;
+    };
+
+    public static boolean isEqual (int a, int b, int c){
+        boolean y = a==b && b==c;
         return y;
     };
 }
