@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        int a = 5;
         System.out.println("fraction: " + fraction(5.3));
         System.out.println("sumLastNums: " + sumLastNums(4568));
         System.out.println("charToNum: " + charToNum('9'));
@@ -19,6 +20,10 @@ public class Main {
         System.out.println("isDivisor: " + isDivisor(2, 15));
         System.out.println("isEqual: " + isEqual(3, 3,3));
         System.out.println("isEqual: " + isEqual(2, 15,2));
+        a =  lastNumSum(a, 11);
+        a =  lastNumSum(a, 123);
+        a =  lastNumSum(a, 14);
+        System.out.println("lastNumSum: " + lastNumSum(a, 1));
     }
 
     public static double fraction(double x){
@@ -66,4 +71,8 @@ public class Main {
         boolean y = a==b && b==c;
         return y;
     };
+
+    public static int lastNumSum(int a, int b){
+        return (a%10)+(b%10);
+    }
 }
