@@ -54,6 +54,8 @@ public class Main {
         System.out.println("day: " + day(2));
         System.out.println("day: " + day(4));
         System.out.println("day: " + day(17));
+        System.out.println("printDays:");
+        printDays("четверг");
 
 
     }
@@ -209,6 +211,19 @@ public class Main {
             case 7: str= "Воскресенье"; break;
         }
         return str;
+    };
+
+    public static void printDays(String x){
+        switch (x){
+            case "понедельник": x=x+"\nвторник";
+            case "вторник": x=x+"\nсреда";
+            case "среда": x=x+"\nчетверг";
+            case "четверг": x=x+"\nпятница";
+            case "пятница": x=x+"\nсуббота";
+            case "суббота": x=x+"\nвоскресенье";
+            case "воскресенье": System.out.println(x);break;
+            default:x = "это не день недели";System.out.println(x);break;
+        };
     };
 
 }
