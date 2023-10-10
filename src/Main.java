@@ -35,6 +35,8 @@ public class Main {
         System.out.println("makeDecision: " + makeDecision(4, 4));
         System.out.println("max3: " + max3(5, 7, 7));
         System.out.println("max3: " + max3(8, -1, 4));
+        System.out.println("sum3: " + sum3(5, 7, 2));
+        System.out.println("sum3: " + sum3(8, -1, 4));
 
 
     }
@@ -102,18 +104,26 @@ public class Main {
     public static int max(int x, int y){
         if(x>y) return x;
         return y;
-    }
+    };
 
     public static String makeDecision(int x, int y){
         if(x>y)return x + " > " + y;
         else if(x<y) return x + " < " + y;
         return x + " = " + y;
-    }
+    };
 
     public static int max3(int x, int y, int z){
         int res=x;
         if(res<y) res = y;
         if(res<z) res = z;
         return res;
-    }
+    };
+
+    public static boolean sum3(int x, int y, int z){
+        boolean res = false;
+        if((x+y==z)||(x+y==y)||(x+y==x)) res = true;
+        if((x+z==z)||(x+z==y)||(x+z==x)) res = true;
+        if((z+y==z)||(z+y==y)||(z+y==x)) res = true;
+        return res;
+    };
 }
