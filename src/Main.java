@@ -50,7 +50,10 @@ public class Main {
         System.out.println("age: " + age(44));
         System.out.println("age: " + age(44411));
         System.out.println("age: " + age(0));
-
+        System.out.println("day: " + day(1));
+        System.out.println("day: " + day(2));
+        System.out.println("day: " + day(4));
+        System.out.println("day: " + day(17));
 
 
     }
