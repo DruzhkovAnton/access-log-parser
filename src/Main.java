@@ -39,6 +39,9 @@ public class Main {
         System.out.println("sum3: " + sum3(8, -1, 4));
         System.out.println("sum2: " + sum2(5, 7));
         System.out.println("sum2: " + sum2(8, -1));
+        System.out.println("is35: " + is35(5));
+        System.out.println("is35: " + is35(8));
+        System.out.println("is35: " + is35(15));
 
 
     }
@@ -133,5 +136,12 @@ public class Main {
         int sum = x+y;
         if(sum>10 && sum<19) return 20;
         return sum;
+    };
+
+    public static boolean is35(int x){
+        boolean res = false;
+        if((x%3==0)||(x%5==0)) res = true;
+        if((x%3==0)&&(x%5==0)) res = false;
+        return res;
     };
 }
