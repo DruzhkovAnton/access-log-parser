@@ -26,6 +26,9 @@ public class Main {
         System.out.println("lastNumSum: " + lastNumSum(a, 1));
         System.out.println("abs: " + abs(5));
         System.out.println("abs: " + abs(-5));
+        System.out.println("safeDiv: " + safeDiv(5, 0));
+        System.out.println("safeDiv: " + safeDiv(8, 2));
+
     }
 
     public static double fraction(double x){
@@ -76,11 +79,15 @@ public class Main {
 
     public static int lastNumSum(int a, int b){
         return (a%10)+(b%10);
-    }
+    };
 
     public static int abs(int x){
         if(x<0)return Math.abs(x);
         return x;
+    };
 
-    }
+    public static int safeDiv(int x, int y){
+        if(y!=0) return x/y;
+        return 0;
+    };
 }
