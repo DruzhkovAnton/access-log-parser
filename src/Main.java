@@ -42,6 +42,10 @@ public class Main {
         System.out.println("is35: " + is35(5));
         System.out.println("is35: " + is35(8));
         System.out.println("is35: " + is35(15));
+        System.out.println("magic6: " + magic6(5,7));
+        System.out.println("magic6: " + magic6(8,2));
+        System.out.println("magic6: " + magic6(1,6));
+
 
 
     }
@@ -142,6 +146,12 @@ public class Main {
         boolean res = false;
         if((x%3==0)||(x%5==0)) res = true;
         if((x%3==0)&&(x%5==0)) res = false;
+        return res;
+    };
+
+    public static boolean magic6(int x, int y){
+        boolean res = false;
+        if(x==6||y==6||(x+y==6)||(x-y==6)||(y-x==6)) res = true;
         return res;
     };
 }
