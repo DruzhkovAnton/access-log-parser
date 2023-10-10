@@ -24,6 +24,8 @@ public class Main {
         a =  lastNumSum(a, 123);
         a =  lastNumSum(a, 14);
         System.out.println("lastNumSum: " + lastNumSum(a, 1));
+        System.out.println("abs: " + abs(5));
+        System.out.println("abs: " + abs(-5));
     }
 
     public static double fraction(double x){
@@ -74,5 +76,11 @@ public class Main {
 
     public static int lastNumSum(int a, int b){
         return (a%10)+(b%10);
+    }
+
+    public static int abs(int x){
+        if(x<0)return Math.abs(x);
+        return x;
+
     }
 }
