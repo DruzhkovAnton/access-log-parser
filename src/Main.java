@@ -28,6 +28,8 @@ public class Main {
         System.out.println("abs: " + abs(-5));
         System.out.println("safeDiv: " + safeDiv(5, 0));
         System.out.println("safeDiv: " + safeDiv(8, 2));
+        System.out.println("max: " + max(5, 7));
+        System.out.println("max: " + max(8, -1));
 
     }
 
@@ -90,4 +92,9 @@ public class Main {
         if(y!=0) return x/y;
         return 0;
     };
+
+    public static int max(int x, int y){
+        if(x>y) return x;
+        return y;
+    }
 }
