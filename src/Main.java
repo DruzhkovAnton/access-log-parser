@@ -30,6 +30,10 @@ public class Main {
         System.out.println("safeDiv: " + safeDiv(8, 2));
         System.out.println("max: " + max(5, 7));
         System.out.println("max: " + max(8, -1));
+        System.out.println("makeDecision: " + makeDecision(5, 7));
+        System.out.println("makeDecision: " + makeDecision(8, -1));
+        System.out.println("makeDecision: " + makeDecision(4, 4));
+
 
     }
 
@@ -96,5 +100,11 @@ public class Main {
     public static int max(int x, int y){
         if(x>y) return x;
         return y;
+    }
+
+    public static String makeDecision(int x, int y){
+        if(x>y)return x + " > " + y;
+        else if(x<y) return x + " < " + y;
+        return x + " = " + y;
     }
 }
