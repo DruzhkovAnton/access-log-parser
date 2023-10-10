@@ -166,39 +166,46 @@ public class Main {
 
         switch (x%10) {
             case 1:
-                res = x % 10 == 1;
                 str = "год";
                 break;
             case 2:
-                res = x % 10 == 2;
                 str = "года";
                 break;
             case 3:
-                res = x % 10 == 3;
                 str = "года";
                 break;
             case 4:
-                res = x % 10 == 4;
                 str = "года";
                 break;
         };
 
         switch (x%100) {
             case 11:
-                res = x%100 == 11;
                 str = "лет";
                 break;
             case 12:
-                res = x%100 == 12;
                 str = "лет";
                 break;
             case 13:
-                res = x%100 == 13;
                 str = "лет";
                 break;
 
         };
         return x + " "+str;
+    };
+
+    public static String day(int x){
+        String str = "это не день недели";
+        switch (x){
+            case 1: str= "Понедельник"; break;
+            case 2: str= "Вторник"; break;
+            case 3: str= "Среда"; break;
+            case 4: str= "Четверг"; break;
+            case 5: str= "Пятница"; break;
+            case 6: str= "Суббота"; break;
+            case 7: str= "Воскресенье"; break;
+        }
+        return str;
     };
 
 }
