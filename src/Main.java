@@ -45,6 +45,11 @@ public class Main {
         System.out.println("magic6: " + magic6(5,7));
         System.out.println("magic6: " + magic6(8,2));
         System.out.println("magic6: " + magic6(1,6));
+        System.out.println("age: " + age(5));
+        System.out.println("age: " + age(31));
+        System.out.println("age: " + age(44));
+        System.out.println("age: " + age(44411));
+        System.out.println("age: " + age(0));
 
 
 
@@ -154,4 +159,46 @@ public class Main {
         if(x==6||y==6||(x+y==6)||(x-y==6)||(y-x==6)) res = true;
         return res;
     };
+
+    public static String age(int x){
+        boolean res = false;
+        String str = "лет";
+
+        switch (x%10) {
+            case 1:
+                res = x % 10 == 1;
+                str = "год";
+                break;
+            case 2:
+                res = x % 10 == 2;
+                str = "года";
+                break;
+            case 3:
+                res = x % 10 == 3;
+                str = "года";
+                break;
+            case 4:
+                res = x % 10 == 4;
+                str = "года";
+                break;
+        };
+
+        switch (x%100) {
+            case 11:
+                res = x%100 == 11;
+                str = "лет";
+                break;
+            case 12:
+                res = x%100 == 12;
+                str = "лет";
+                break;
+            case 13:
+                res = x%100 == 13;
+                str = "лет";
+                break;
+
+        };
+        return x + " "+str;
+    };
+
 }
