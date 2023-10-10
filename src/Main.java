@@ -33,6 +33,8 @@ public class Main {
         System.out.println("makeDecision: " + makeDecision(5, 7));
         System.out.println("makeDecision: " + makeDecision(8, -1));
         System.out.println("makeDecision: " + makeDecision(4, 4));
+        System.out.println("max3: " + max3(5, 7, 7));
+        System.out.println("max3: " + max3(8, -1, 4));
 
 
     }
@@ -106,5 +108,12 @@ public class Main {
         if(x>y)return x + " > " + y;
         else if(x<y) return x + " < " + y;
         return x + " = " + y;
+    }
+
+    public static int max3(int x, int y, int z){
+        int res=x;
+        if(res<y) res = y;
+        if(res<z) res = z;
+        return res;
     }
 }
