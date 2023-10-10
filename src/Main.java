@@ -37,6 +37,8 @@ public class Main {
         System.out.println("max3: " + max3(8, -1, 4));
         System.out.println("sum3: " + sum3(5, 7, 2));
         System.out.println("sum3: " + sum3(8, -1, 4));
+        System.out.println("sum2: " + sum2(5, 7));
+        System.out.println("sum2: " + sum2(8, -1));
 
 
     }
@@ -125,5 +127,11 @@ public class Main {
         if((x+z==z)||(x+z==y)||(x+z==x)) res = true;
         if((z+y==z)||(z+y==y)||(z+y==x)) res = true;
         return res;
+    };
+
+    public static int sum2(int x, int y){
+        int sum = x+y;
+        if(sum>10 && sum<19) return 20;
+        return sum;
     };
 }
