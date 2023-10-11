@@ -9,6 +9,10 @@ public class Main {
         System.out.println("numLen:\n" + Cicle_massive.numLen(123456789));
         System.out.println("equalNum:\n" + Cicle_massive.equalNum(12));
         System.out.println("equalNum:\n" + Cicle_massive.equalNum(22));
+        System.out.println("square");
+        Cicle_massive.square(2);
+        System.out.println("square");
+        Cicle_massive.square(4);
 
     }
 }
