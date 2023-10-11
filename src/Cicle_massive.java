@@ -39,4 +39,18 @@ public class Cicle_massive {
         }
         return res;
     }
+
+    public static boolean equalNum(int x) {
+        boolean res = true;
+        int y = x%10;
+        int z = x;
+        for (long i = x; i >= 1; i /= 10) {
+
+            if(y != z%10){
+                res = false;
+            }
+            z = z/10;
+        }
+        return res;
+    }
 }
