@@ -15,4 +15,12 @@ public class Cicle_massive {
         }
         return str;
     }
+
+    public static String chet(int x) {
+        String str = "0";
+        for(int i=2; i<=x; i+=2){
+            str = str+" "+i;
+        }
+        return str;
+    }
 }
