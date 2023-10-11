@@ -31,4 +31,12 @@ public class Cicle_massive {
         }
         return res;
     }
+
+    public static int numLen(long x){
+        int res = 0;
+        for(long i=x; i>=1; i/=10){
+            res++;
+        }
+        return res;
+    }
 }
