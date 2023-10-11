@@ -23,4 +23,12 @@ public class Cicle_massive {
         }
         return str;
     }
+
+    public static int pow(int x, int y){
+        int res = 1;
+        for(int i=1; i<=y; i++){
+            res = res * x;
+        }
+        return res;
+    }
 }
