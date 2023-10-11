@@ -8,4 +8,11 @@ public class Cicle_massive {
         return str;
     }
 
+    public static String reverseListNums(int x) {
+        String str = Integer.toString(x);
+        for(int i=x-1; i>=0; i--){
+            str = str+" "+i;
+        }
+        return str;
+    }
 }
