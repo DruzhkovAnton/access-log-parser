@@ -19,6 +19,8 @@ public class Main {
         Cicle_massive.rightTriangle(3);
         System.out.println("rightTriangle");
         Cicle_massive.rightTriangle(4);
+        System.out.println("guessGame");
+        Cicle_massive.guessGame();
 
     }
 }

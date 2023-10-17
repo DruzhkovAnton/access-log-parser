@@ -83,4 +83,18 @@ public class Cicle_massive {
             System.out.println();
         }
     }
+
+    public static void guessGame() {
+        int randomNum = 3;
+        java.util.Scanner sc = new java.util.Scanner(System.in);
+        int x;
+        do {
+            System.out.println("What number am I thinking (0 to 9)? :");
+            x = sc.nextInt();
+            if (x != randomNum) {
+                System.out.println("No, try again");
+            } else
+                System.out.println("Yes, it`s " + randomNum);
+        } while (x!=randomNum);
+    }
 }
