@@ -13,7 +13,12 @@ public class Main {
         Cicle_massive.square(2);
         System.out.println("square");
         Cicle_massive.square(4);
+        System.out.println("leftTriangle");
         Cicle_massive.leftTriangle(3);
+        System.out.println("rightTriangle");
+        Cicle_massive.rightTriangle(3);
+        System.out.println("rightTriangle");
+        Cicle_massive.rightTriangle(4);
 
     }
 }
