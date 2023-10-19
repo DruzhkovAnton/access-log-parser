@@ -19,11 +19,14 @@ public class Main {
         Cicle_massive.rightTriangle(3);
         System.out.println("rightTriangle");
         Cicle_massive.rightTriangle(4);
-        System.out.println("guessGame");
-        Cicle_massive.guessGame();
+       // System.out.println("guessGame");
+        //Cicle_massive.guessGame();
 
         int arr[] = {1,2,3,4,5,6,7,8,9};
         System.out.println("findFirst: " + Cicle_massive.findFirst(arr,0));
+
+        int arr1[] = {1,2,3,3,5,6,3,3,9};
+        System.out.println("findLast: " + Cicle_massive.findLast(arr1,3));
 
 
 
