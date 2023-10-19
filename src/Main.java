@@ -128,7 +128,7 @@ public class Main {
     public static String makeDecision(int x, int y){
         if(x>y)return x + " > " + y;
         else if(x<y) return x + " < " + y;
-        return x + " = " + y;
+        return x + " == " + y;
     };
 
     public static int max3(int x, int y, int z){
