@@ -59,5 +59,9 @@ public class Main {
         int arr10[] = {1,2,3,4,5};
         System.out.println("add: " + Arrays.toString(Cicle_massive.add(arr10,9, 3)));
 
+        int arr11[] = {1,2,3,4,5};
+        int ins[] = {7,8,9};
+        System.out.println("addArr: " + Arrays.toString(Cicle_massive.addArr(arr11,ins, 5)));
+
     }
 }

@@ -221,4 +221,20 @@ public class Cicle_massive {
         return res;
     }
 
+    public static int[] addArr(int[] arr, int[] ins, int pos){
+        int[] res = new int[arr.length + ins.length];
+        for (int i = 0; i < pos; i++) {
+            res[i] = arr[i];
+        }
+
+        for (int i = 0; i < ins.length; i++) {
+            res[pos + i] = ins[i];
+        }
+
+        for (int i = pos; i < arr.length; i++) {
+            res[ins.length + i] = arr[i];
+        }
+        return res;
+    }
+
 }
