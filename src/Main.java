@@ -50,6 +50,8 @@ public class Main {
 
         System.out.println("concat: " + Arrays.toString(Cicle_massive.concat(arr1,arr2)));
 
+        int arr8[] = {1,2,3,3,5,6,3,3,9};
+        System.out.println("findAll: " + Arrays.toString(Cicle_massive.findAll(arr8,3)));
 
     }
 }

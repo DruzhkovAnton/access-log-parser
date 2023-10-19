@@ -176,5 +176,21 @@ public class Cicle_massive {
         return res;
     }
 
+    public static int[] findAll(int[] arr, int x){
+
+        int y = 0;
+        int z = 0;
+        for (int i=0; i<arr.length; i++)
+            if(arr[i]==x)y++;
+        int[] res = new int[y];
+
+        for (int i=0; i<arr.length; i++)
+            if(arr[i]==x){
+                res[z] = i;
+                z++;
+            }
+        return res;
+    }
+
 
 }
