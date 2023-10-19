@@ -165,5 +165,16 @@ public class Cicle_massive {
         return res;
     }
 
+    public static int[] concat(int[] arr1, int[] arr2){
+        int x = arr1.length + arr2.length;
+        int[] res = new int[x];
+        for(int i=0; i<x; i++){
+            if(i<arr1.length)
+                res[i]=arr1[i];
+            else res[i]=arr2[i-arr1.length];
+        }
+        return res;
+    }
+
 
 }

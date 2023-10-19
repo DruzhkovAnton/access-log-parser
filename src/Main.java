@@ -48,6 +48,8 @@ public class Main {
         int arr7[] = {1,2,3,4,5};
         System.out.println("reverseBack:\n" + Arrays.toString(Cicle_massive.reverseBack(arr7)));
 
+        System.out.println("concat: " + Arrays.toString(Cicle_massive.concat(arr1,arr2)));
+
 
     }
 }
