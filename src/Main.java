@@ -1,4 +1,4 @@
-import java.util.Scanner;
+//import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
@@ -21,6 +21,11 @@ public class Main {
         Cicle_massive.rightTriangle(4);
         System.out.println("guessGame");
         Cicle_massive.guessGame();
+
+        int arr[] = {1,2,3,4,5,6,7,8,9};
+        System.out.println("findFirst: " + Cicle_massive.findFirst(arr,0));
+
+
 
     }
 }
