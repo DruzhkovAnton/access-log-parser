@@ -111,5 +111,12 @@ public class Cicle_massive {
         return index;
     }
 
+    public static int maxAbs(int[] arr){
+        int res = 0;
+        for(int i=0;i<arr.length;i++)
+            if (Math.abs(res)<=Math.abs(arr[i]))res=arr[i];
+        return res;
+    }
+
 
 }

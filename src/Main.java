@@ -28,6 +28,9 @@ public class Main {
         int arr1[] = {1,2,3,3,5,6,3,3,9};
         System.out.println("findLast: " + Cicle_massive.findLast(arr1,3));
 
+        int arr2[] = {1,-2,-7,4,2,2,-25};
+        System.out.println("maxAbs: " + Cicle_massive.maxAbs(arr2));
+
 
 
     }
