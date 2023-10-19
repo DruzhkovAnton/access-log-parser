@@ -207,4 +207,18 @@ public class Cicle_massive {
         return res;
     }
 
+    public static int[] add(int[] arr, int x, int pos){
+        int[] res = new int[arr.length+1];
+        int y = 0;
+        for (int i=0; i<res.length; i++){
+            if(i==pos)res[i]=x;
+            else {
+                res[i]=arr[y];
+                y++;
+            }
+
+        }
+        return res;
+    }
+
 }

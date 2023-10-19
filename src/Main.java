@@ -56,5 +56,8 @@ public class Main {
         int arr9[] = {1,2,-3,4,-2,2,-5};
         System.out.println("deleteNegative: " + Arrays.toString(Cicle_massive.deleteNegative(arr9)));
 
+        int arr10[] = {1,2,3,4,5};
+        System.out.println("add: " + Arrays.toString(Cicle_massive.add(arr10,9, 3)));
+
     }
 }
