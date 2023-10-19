@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Cicle_massive {
 
     public static String listNums(int x){
@@ -136,6 +138,19 @@ public class Cicle_massive {
             y--;
         }
         return true;
+    }
+
+    public static void reverse(int[] arr){
+        int x = 0;
+        int y = arr.length;
+        int[] res = new int[y];
+        while (x < arr.length) {
+            res[x]=arr[y-1 ];
+            x++;
+            y--;
+        }
+
+        System.out.println(Arrays.toString(res));
     }
 
 

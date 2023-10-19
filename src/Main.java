@@ -39,5 +39,9 @@ public class Main {
         int arr5[] = {1,-2,-7,4,-7,-2,1};
         System.out.println("palindrom: " + Cicle_massive.palindrom(arr5));
 
+        int arr6[] = {1,2,3,4,5};
+        System.out.println("reverse: " );
+        Cicle_massive.reverse(arr6);
+
     }
 }
