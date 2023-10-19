@@ -34,5 +34,10 @@ public class Main {
         int arr3[] = {1,-2,7,-4,-2,2,5};
         System.out.println("countPositive: " + Cicle_massive.countPositive(arr3));
 
+        int arr4[] = {1,-2,-7,4,2,2,5};
+        System.out.println("palindrom: " + Cicle_massive.palindrom(arr4));
+        int arr5[] = {1,-2,-7,4,-7,-2,1};
+        System.out.println("palindrom: " + Cicle_massive.palindrom(arr5));
+
     }
 }

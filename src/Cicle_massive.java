@@ -125,5 +125,18 @@ public class Cicle_massive {
         return res;
     }
 
+    public static boolean palindrom(int[] arr){
+        int x = 0;
+        int y = arr.length-1;
+        while (x < y) {
+            if (arr[x] != arr[y]) {
+                return false;
+            }
+            x++;
+            y--;
+        }
+        return true;
+    }
+
 
 }
