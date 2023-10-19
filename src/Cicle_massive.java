@@ -153,5 +153,17 @@ public class Cicle_massive {
         System.out.println(Arrays.toString(res));
     }
 
+    public static int[] reverseBack(int[] arr){
+        int x = 0;
+        int y = arr.length;
+        int[] res = new int[y];
+        while (x < arr.length) {
+            res[x]=arr[y-1 ];
+            x++;
+            y--;
+        }
+        return res;
+    }
+
 
 }

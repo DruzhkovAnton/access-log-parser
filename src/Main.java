@@ -1,5 +1,7 @@
 //import java.util.Scanner;
 
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
         System.out.println("listNums:\n" + Cicle_massive.listNums(5));
@@ -42,6 +44,10 @@ public class Main {
         int arr6[] = {1,2,3,4,5};
         System.out.println("reverse: " );
         Cicle_massive.reverse(arr6);
+
+        int arr7[] = {1,2,3,4,5};
+        System.out.println("reverseBack:\n" + Arrays.toString(Cicle_massive.reverseBack(arr7)));
+
 
     }
 }
