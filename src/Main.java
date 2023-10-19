@@ -53,5 +53,8 @@ public class Main {
         int arr8[] = {1,2,3,3,5,6,3,3,9};
         System.out.println("findAll: " + Arrays.toString(Cicle_massive.findAll(arr8,3)));
 
+        int arr9[] = {1,2,-3,4,-2,2,-5};
+        System.out.println("deleteNegative: " + Arrays.toString(Cicle_massive.deleteNegative(arr9)));
+
     }
 }

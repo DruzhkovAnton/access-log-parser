@@ -192,5 +192,19 @@ public class Cicle_massive {
         return res;
     }
 
+    public static int[] deleteNegative(int[] arr){
+        int x = 0;
+        for (int i=0; i<arr.length; i++)
+            if(arr[i]>0)x++;
+        int[] res = new int[x];
+        x = 0;
+
+        for (int i=0; i<arr.length; i++)
+            if(arr[i]>0){
+                res[x] = arr[i];
+                x++;
+            }
+        return res;
+    }
 
 }
