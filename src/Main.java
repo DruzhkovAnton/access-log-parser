@@ -31,7 +31,8 @@ public class Main {
         int arr2[] = {1,-2,-7,4,2,2,-25};
         System.out.println("maxAbs: " + Cicle_massive.maxAbs(arr2));
 
-
+        int arr3[] = {1,-2,7,-4,-2,2,5};
+        System.out.println("countPositive: " + Cicle_massive.countPositive(arr3));
 
     }
 }
