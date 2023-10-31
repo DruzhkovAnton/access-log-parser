@@ -1,43 +1,50 @@
-import java.io.File;
-import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) {
-        Pointe pointe1 = new Pointe(1,3);
-        Pointe pointe2 = new Pointe(1,5);
-        Pointe pointe3 = new Pointe(5,8);
+        Pointe pointe1 = new Pointe(1,5);
+        Pointe pointe2 = new Pointe(2,8);
+        Pointe pointe3 = new Pointe(5,3);
+        Pointe pointe4 = new Pointe(8,9);
 
-        System.out.print(pointe1.toSring());
-        System.out.print(pointe2.toSring());
-        System.out.print(pointe3.toSring());
-        Pointe.poitEquals(pointe1,pointe2,pointe3);
+        BrokenLine lst = new BrokenLine(pointe1);
+        lst.pLst.add(pointe2);
+        lst.pLst.add(pointe3);
+        lst.pLst.add(pointe4);
+        lst.getLineLst();
 
-        Line line1 = new Line(1,3,5,8);
-        Line line2 = new Line(10,11,15,19);
-        Line line3 = new Line(line1.p2, line2.p1);
+        Line l1 = new Line(pointe1, pointe2);
+        Line l2 = new Line(pointe2, pointe3);
+        Line l3 = new Line(pointe3, pointe4);
 
-        System.out.println(line1.fromPointToPoint());
-        System.out.println("Длина линии 1 = " + line1.lengthLine());
+        double sumLine = l1.lengthLine()+l2.lengthLine()+l3.lengthLine();
+        double sumMassLine = lst.lengthBrokenLine();
 
-        System.out.println(line2.fromPointToPoint());
-        System.out.println("Длина линии 2 = " + line2.lengthLine());
 
-        System.out.println(line3.fromPointToPoint());
-        System.out.println("Длина линии 3 = " + line3.lengthLine());
+        System.out.println("массив точек:\n" + lst.pointListToString());
 
-        line1.p2.x = line1.p2.x + 1;
-        line2.p1.y = line2.p1.y +1;
+        System.out.println("Длина линий ломаной - " + sumLine);
 
-        System.out.println("произошло изменени линий");
+        System.out.println("массив линий:" + lst.lineListToString());
 
-        System.out.println(line1.fromPointToPoint());
-        System.out.println("Длина линии 1 = " + line1.lengthLine());
-        System.out.println(line2.fromPointToPoint());
-        System.out.println("Длина линии 2 = " + line2.lengthLine());
-        System.out.println(line3.fromPointToPoint());
-        System.out.println("Длина линии 3 = " + line3.lengthLine());
+        System.out.println("Длина массива линий ломаной - " + sumMassLine);
+         assert sumLine==sumMassLine:"длина линий ломаной не совпадает с длиной линий из массива";
+        System.out.println("длина ломаной " + sumLine + " равна длине линий из массива " + sumMassLine);
 
-        System.out.println("сумма длин всех линий = "+(line1.lengthLine() + line2.lengthLine() + line3.lengthLine()));
+        pointe2.x = 12;
+        System.out.println("--------------------");
+        System.out.println("массив точек:\n" + lst.pointListToString());
+        System.out.println("Длина линий ломаной - " + sumLine);
+        System.out.println("массив линий:" + lst.lineListToString());
+        System.out.println("Длина массива линий ломаной - " + sumMassLine);
+        if(sumLine==sumMassLine)System.out.println("длина ломаной " + sumLine + " равна длине линий из массива " + sumMassLine);
+        else System.out.println("длина линий ломаной не совпадает с длиной линий из массива");
+
+
+
+
+
+
+
+
 
 
 

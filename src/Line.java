@@ -15,7 +15,7 @@ public class Line {
 
     public String fromPointToPoint() {
         String res = "";
-        res = "Линия от " + p1.toSring() + " до " + p2.toSring();
+        res = "\nЛиния от " + p1.toSring() + " до " + p2.toSring();
         return res;
     }
 
@@ -23,5 +23,6 @@ public class Line {
         double res =  Math.sqrt(Math.pow(p2.x - p1.x,2) + Math.pow(p2.y - p1.y,2 )); //(x2 - x1)^2 + (y2 - y1)^2)
         return res;
     }
+
 
 }
