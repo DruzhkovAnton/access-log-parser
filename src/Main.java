@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
         Pointe pointe1 = new Pointe(1,5);
@@ -37,6 +39,10 @@ public class Main {
         System.out.println("Длина массива линий ломаной - " + sumMassLine);
         if(sumLine==sumMassLine)System.out.println("длина ломаной " + sumLine + " равна длине линий из массива " + sumMassLine);
         else System.out.println("длина линий ломаной не совпадает с длиной линий из массива");
+
+
+        Student alex = new Student("Alex", List.of(5,4,5,2,3,1));
+        System.out.println(alex);
 
 
 
