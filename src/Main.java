@@ -41,8 +41,30 @@ public class Main {
         else System.out.println("длина линий ломаной не совпадает с длиной линий из массива");
 
 
+        Fraction a = new Fraction(1,3);
+        Fraction b = new Fraction(2,5);
+        Fraction с = new Fraction(7,8);
+
+        Fraction sum = a.plus(b);
+        Fraction minus = b.minus(a);
+        Fraction sum1 = a.plus(5);
+        Fraction minus1 = b.minus(5);
+
+        Fraction sum2 = a.plus(b).plus(с).minus(5);
+
+        System.out.println(sum.toString());
+        System.out.println(minus.toString());
+        System.out.println(sum1.toString());
+        System.out.println(minus1.toString());
+        System.out.println(sum2.toString());
+
+
+
+
         Student alex = new Student("Alex", List.of(5,4,5,2,3,1));
         System.out.println(alex);
+
+
 
 
 
