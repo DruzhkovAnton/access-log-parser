@@ -19,7 +19,7 @@ public class Main {
         Line l3 = new Line(pointe3, pointe4);
 
         double sumLine = l1.lengthLine()+l2.lengthLine()+l3.lengthLine();
-        double sumMassLine = lst.lengthBrokenLine();
+        double sumMassLine = lst.length();
 
 
         System.out.println("массив точек:\n" + lst.pointListToString());
@@ -68,6 +68,15 @@ public class Main {
         Pointe3D p1 = new Pointe3D(12,15,20);
 
         System.out.println(p1);
+
+        Polygon polygon = new Polygon();
+        polygon.pLst.add(pointe1);
+        polygon.pLst.add(pointe2);
+        polygon.pLst.add(pointe3);
+        polygon.pLst.add(pointe4);
+        polygon.getLineLst();
+        System.out.println(polygon.lineListToString());
+        System.out.println(polygon.length());
 
 
 

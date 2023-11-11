@@ -37,7 +37,7 @@ public class BrokenLine {
         return lLst;
     }
 
-    public double lengthBrokenLine(){
+    public double length(){
         double res = 0;
         for(int i=0; i< lLst.size();i++){
             int x1 = lLst.get(i).p1.x;

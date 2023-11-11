@@ -1,12 +1,7 @@
 public class Pointe3D extends Pointe {
-    int x,y,z;
-    public Pointe3D() {
-        super();
-    }
-
-    public Pointe3D( int z){
-        this.x = super.x;
-        this.y = super.y;
+    int z;
+    public Pointe3D(int x, int y, int z) {
+        super(x,y);
         this.z = z;
     }
 
