@@ -9,8 +9,8 @@ public class Line {
     }
 
     public Line(int x, int y, int x1, int y1) {
-        this.p1 = new Pointe(x, y);
-        this.p2 = new Pointe(x1, y1);
+        this.p1 = new Pointe();
+        this.p2 = new Pointe();
     }
 
     public String fromPointToPoint() {

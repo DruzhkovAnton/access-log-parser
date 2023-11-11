@@ -14,7 +14,6 @@ public class Student {
             checkGrades(j);
         });
         this.name = name;
-
     }
 
     public Student(String name) {

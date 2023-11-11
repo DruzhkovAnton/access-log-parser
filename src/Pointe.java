@@ -1,7 +1,7 @@
 class Pointe {
     int x, y;
 
-    public Pointe(int x, int y) {
+    public Pointe() {
         this.x = x;
         this.y = y;
     }

@@ -2,10 +2,10 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        Pointe pointe1 = new Pointe(1,5);
-        Pointe pointe2 = new Pointe(2,8);
-        Pointe pointe3 = new Pointe(5,3);
-        Pointe pointe4 = new Pointe(8,9);
+        Pointe pointe1 = new Pointe();
+        Pointe pointe2 = new Pointe();
+        Pointe pointe3 = new Pointe();
+        Pointe pointe4 = new Pointe();
 
         BrokenLine lst = new BrokenLine(pointe1);
         lst.pLst.add(pointe2);
@@ -63,6 +63,15 @@ public class Main {
 
         Student alex = new Student("Alex", List.of(5,4,5,2,3,1));
         System.out.println(alex);
+
+        Pointe3D p1 = new Pointe3D();
+        p1.x = 12;
+        p1.y = 15;
+        p1.z = 20;
+
+        System.out.println(p1);
+
+
 
 
 
