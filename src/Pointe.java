@@ -1,10 +1,11 @@
 class Pointe {
     int x, y;
 
-    public Pointe() {
+    public Pointe(int x, int y) {
         this.x = x;
         this.y = y;
     }
+
 
     public String toSring() {
         String res = "";
