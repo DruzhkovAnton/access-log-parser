@@ -91,12 +91,19 @@ public class Main {
         double num2 = 3.0/5.0;
         double num3 = 2.3;
         SumFraction result = new SumFraction(List.of(num1,num2,num3));
-
         System.out.println(result.sumNumbers());
 
+        double num11 = 3.6;
+        double num21 = 49.0/12.0;
+        double num31 = 3;
+        double num4 = 3.0/2.0;
+        SumFraction result1 = new SumFraction(List.of(num11,num21,num31,num4));
+        System.out.println(result1.sumNumbers());
 
-
-        System.out.println(num1+"|"+num2+"|"+num3);
+        double num12 = 1.0/3.0;
+        double num22 = 1;
+        SumFraction result3 = new SumFraction(List.of(num12,num22));
+        System.out.println(result3.sumNumbers());
 
 
 
