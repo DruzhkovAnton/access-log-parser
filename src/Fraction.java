@@ -11,6 +11,9 @@ public class Fraction extends Number{
         }else this.y = y;
     }
 
+
+
+
     @Override
     public String toString() {
 

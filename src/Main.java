@@ -87,6 +87,23 @@ public class Main {
         System.out.println(li1.length());
         System.out.println(li2.length());
 
+        double num1 = 2;
+        double num2 = 3.0/5.0;
+        double num3 = 2.3;
+        SumFraction result = new SumFraction(List.of(num1,num2,num3));
+
+        System.out.println(result.sumNumbers());
+
+
+
+        System.out.println(num1+"|"+num2+"|"+num3);
+
+
+
+
+
+
+
 
     }
 }
