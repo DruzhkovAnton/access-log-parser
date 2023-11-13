@@ -1,4 +1,4 @@
-public class Fraction {
+public class Fraction extends Number{
     private final int x;
     private final int y;
 
@@ -11,7 +11,9 @@ public class Fraction {
         }else this.y = y;
     }
 
+    @Override
     public String toString() {
+
         return x + "/" + y;
     }
 
@@ -37,4 +39,23 @@ public class Fraction {
         return new Fraction(newX, this.y);
     }
 
+    @Override
+    public int intValue() {
+        return x/y;
+    }
+
+    @Override
+    public long longValue() {
+        return x/y;
+    }
+
+    @Override
+    public float floatValue() {
+        return x/y;
+    }
+
+    @Override
+    public double doubleValue() {
+        return x/y;
+    }
 }
