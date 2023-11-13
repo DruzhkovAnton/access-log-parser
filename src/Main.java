@@ -7,7 +7,6 @@ public class Main {
         Pointe pointe3 = new Pointe(5,3);
         Pointe pointe4 = new Pointe(8,9);
 
-
         BrokenLine lst = new BrokenLine(pointe1);
         lst.pLst.add(pointe2);
         lst.pLst.add(pointe3);
@@ -77,20 +76,16 @@ public class Main {
         polygon.getLineLst();
         System.out.println(polygon.lineListToString());
         System.out.println(polygon.length());
+        System.out.println();
 
+        Lineble li1 = new Polygon(List.of(pointe1,pointe2,pointe3,pointe4));
+        Lineble li2 = new BrokenLine(List.of(pointe1,pointe2,pointe3,pointe4));
 
+        li1.getLineLst();
+        li2.getLineLst();
 
-
-
-
-
-
-
-
-
-
-
-
+        System.out.println(li1.length());
+        System.out.println(li2.length());
 
 
     }

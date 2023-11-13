@@ -1,9 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-
-
-public class BrokenLine {
+public class BrokenLine implements Lineble{
     List<Pointe> pLst = new ArrayList<>();
     List<Line> lLst = new ArrayList<>();
 
@@ -11,13 +9,12 @@ public class BrokenLine {
         this.pLst.add(p);
     }
 
-
-
-    public BrokenLine() {
-
+    public BrokenLine(List<Pointe> p) {
+        this.pLst = p;
     }
 
-
+    public BrokenLine() {
+    }
 
     public String pointListToString(){
         String res = "";

@@ -5,6 +5,11 @@ public class Polygon extends BrokenLine {
     public Polygon(){
         super();
     }
+
+    public Polygon(List<Pointe> p) {
+        super.pLst = p;
+    }
+
     @Override
     public List<Line> getLineLst() {
         super.getLineLst();
