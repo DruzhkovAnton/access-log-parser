@@ -1,7 +1,26 @@
+package ru.courses.main;
+import ru.courses.algebra.*;
+import ru.courses.geometry.*;
+import ru.courses.student.*;
+
 import java.util.List;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Введите число:");
+        String number = scanner.nextLine();
+        System.out.println("Введите степень:");
+        String x = scanner.nextLine();
+        RaiseToPow pow = new RaiseToPow(number,x);
+        pow.toPow();
+
+
+
+
         Pointe pointe1 = new Pointe(1,5);
         Pointe pointe2 = new Pointe(2,8);
         Pointe pointe3 = new Pointe(5,3);

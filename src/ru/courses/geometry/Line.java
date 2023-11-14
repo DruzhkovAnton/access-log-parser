@@ -1,4 +1,4 @@
-
+package ru.courses.geometry;
 
 public class Line {
     Pointe p1,p2;

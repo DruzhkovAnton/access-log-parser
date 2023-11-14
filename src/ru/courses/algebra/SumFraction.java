@@ -1,3 +1,5 @@
+package ru.courses.algebra;
+
 import java.util.List;
 
 public class SumFraction {

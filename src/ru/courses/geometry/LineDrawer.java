@@ -1,3 +1,5 @@
+package ru.courses.geometry;
+
 import javax.swing.*;
 import java.awt.*;
 

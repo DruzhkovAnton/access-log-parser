@@ -1,8 +1,10 @@
+package ru.courses.geometry;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class BrokenLine implements Lineble{
-    List<Pointe> pLst = new ArrayList<>();
+    public List<Pointe> pLst = new ArrayList<>();
     List<Line> lLst = new ArrayList<>();
 
     public BrokenLine(Pointe p){

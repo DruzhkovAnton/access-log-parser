@@ -1,3 +1,5 @@
+package ru.courses.geometry;
+
 public class Pointe3D extends Pointe {
     int z;
     public Pointe3D(int x, int y, int z) {

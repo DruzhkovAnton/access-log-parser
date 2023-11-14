@@ -1,4 +1,5 @@
-import java.awt.*;
+package ru.courses.geometry;
+
 import java.util.List;
 
 public class Polygon extends BrokenLine {
