@@ -1,7 +1,9 @@
 package ru.courses.main;
 import ru.courses.algebra.*;
 import ru.courses.geometry.*;
+import ru.courses.geometry.Polygon;
 import ru.courses.student.*;
+import java.awt.Point;
 
 import java.util.List;
 import java.util.Scanner;
@@ -18,7 +20,15 @@ public class Main {
         RaiseToPow pow = new RaiseToPow(number,x);
         pow.toPow();
 
+        Point jPoint = new Point();
+        Pointe point = new Pointe();
 
+        jPoint.x = 10;
+        jPoint.y = 5;
+        System.out.println(jPoint);
+        point.x = 10;
+        point.y = 5;
+        System.out.println(point);
 
 
         Pointe pointe1 = new Pointe(1,5);

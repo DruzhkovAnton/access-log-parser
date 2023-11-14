@@ -2,11 +2,15 @@ package ru.courses.geometry;
 
 public class Pointe {
     public int x;
-    int y;
+    public int y;
 
     public Pointe(int x, int y) {
         this.x = x;
         this.y = y;
+    }
+
+    public Pointe() {
+
     }
 
 
