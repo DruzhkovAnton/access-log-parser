@@ -134,6 +134,14 @@ public class Main {
         SumFraction result3 = new SumFraction(List.of(num12,num22));
         System.out.println(result3.sumNumbers());
 
+        Pointe pointTest = new Pointe(1,5);
+        System.out.println(pointe1.toSring()+pointTest.toSring());
+        System.out.println(pointe1.equals(pointTest));
+
+        System.out.println(pointe1.toSring()+pointe2.toSring());
+        System.out.println(pointe1.equals(pointe2));
+
+
 
 
 
