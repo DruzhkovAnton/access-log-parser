@@ -55,4 +55,36 @@ public class BrokenLine implements Lineble{
         }
         return res;
     }
+
+    @Override
+    public boolean equals(Object obj){
+        if(this == obj) {
+            return false;
+        }
+        if(obj == null || getClass() != obj.getClass()){
+            return false;
+        }
+        BrokenLine brokenLine = (BrokenLine) obj;
+        if(this.pLst.size()!=brokenLine.pLst.size()){
+            return false;
+        }
+        boolean res = false;
+        for(int i=0; i<this.pLst.size(); i++) {
+            res = this.pLst.get(i).x==brokenLine.pLst.get(i).x && this.pLst.get(i).y==brokenLine.pLst.get(i).y;
+        }
+        return res;
+
+    }
+
+    @Override
+    public int hashCode(){
+        int result = 17;
+        int sump1 = 17;
+        int sump2 = 17;
+        for(int i=0; i<this.pLst.size(); i++) {
+            sump1 = sump1 + pLst.get(i).x;
+            sump2 = sump2 + pLst.get(i).y;
+        }
+        return result;
+    }
 }

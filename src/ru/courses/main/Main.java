@@ -35,6 +35,7 @@ public class Main {
         Pointe pointe2 = new Pointe(2,8);
         Pointe pointe3 = new Pointe(5,3);
         Pointe pointe4 = new Pointe(8,9);
+        Pointe pointe5 = new Pointe(10,9);
 
         BrokenLine lst = new BrokenLine(pointe1);
         lst.pLst.add(pointe2);
@@ -150,6 +151,20 @@ public class Main {
         Line l8 = new Line(pointe2, pointe3);
         System.out.println(l7.toString()+l8.toString());
         System.out.println(l7.equals(l8));
+
+        BrokenLine lst1 = new BrokenLine(pointe1);
+        lst1.pLst.add(pointe2);
+        lst1.pLst.add(pointe3);
+        lst1.pLst.add(pointe4);
+        lst1.getLineLst();
+
+        BrokenLine lst2 = new BrokenLine(pointe1);
+        lst2.pLst.add(pointe2);
+        lst2.pLst.add(pointe3);
+        lst2.pLst.add(pointe4);
+        lst2.getLineLst();
+
+        System.out.println(lst1.equals(lst2));
 
 
 
