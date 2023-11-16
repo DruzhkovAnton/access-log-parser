@@ -141,6 +141,18 @@ public class Main {
         System.out.println(pointe1.toSring()+pointe2.toSring());
         System.out.println(pointe1.equals(pointe2));
 
+        Line l5 = new Line(pointe1, pointe2);
+        Line l6 = new Line(pointe1, pointe2);
+        System.out.println(l5.toString()+l6.toString());
+        System.out.println(l5.equals(l6));
+
+        Line l7 = new Line(pointe1, pointe2);
+        Line l8 = new Line(pointe2, pointe3);
+        System.out.println(l7.toString()+l8.toString());
+        System.out.println(l7.equals(l8));
+
+
+
 
 
 
