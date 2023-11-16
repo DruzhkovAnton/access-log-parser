@@ -4,6 +4,7 @@ import ru.courses.geometry.*;
 import ru.courses.geometry.Polygon;
 import ru.courses.student.*;
 import java.awt.Point;
+import static  ru.courses.algebra.RaiseToPow.toPow;
 
 import java.util.List;
 import java.util.Scanner;
@@ -17,8 +18,7 @@ public class Main {
         String number = scanner.nextLine();
         System.out.println("Введите степень:");
         String x = scanner.nextLine();
-        RaiseToPow pow = new RaiseToPow(number,x);
-        pow.toPow();
+        toPow(number, x);
 
         Point jPoint = new Point();
         Pointe point = new Pointe();
