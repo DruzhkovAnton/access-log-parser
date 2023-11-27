@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import static ru.courses.parser.BubleSort.bubbleSort;
+import static ru.courses.parser.BubleSort.reverse;
 
 public class Main {
     public static void main(String[] args)  {
@@ -27,6 +28,12 @@ public class Main {
         bubbleSort(list1);
         System.out.println(list);
         System.out.println(Arrays.toString(list1));
+
+        reverse(list1);
+        System.out.println(Arrays.toString(list1));
+
+        reverse(list);
+        System.out.println(list);
 
 
 
