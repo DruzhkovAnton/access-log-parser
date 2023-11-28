@@ -1,11 +1,13 @@
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.stream.Stream;
 
 import static ru.courses.parser.BubleSort.bubbleSort;
 import static ru.courses.parser.BubleSort.reverse;
 import static ru.courses.parser.Streams.getStringFromStream;
+import static ru.courses.parser.Streams.printList;
 
 public class Main {
     public static void main(String[] args)  {
@@ -40,6 +42,10 @@ public class Main {
         Stream<String> words = Stream.of("a", "b", "c", "d", "e", "f");
         String result = getStringFromStream(words);
         System.out.println(result);
+
+        ArrayList<Integer> num = new ArrayList<>(List.of(1,2,3,4));
+        printList(num);
+
 
 
 
