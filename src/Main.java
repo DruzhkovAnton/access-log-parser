@@ -1,3 +1,5 @@
+import ru.courses.parser.Cat;
+
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -8,9 +10,10 @@ import static ru.courses.parser.BubleSort.bubbleSort;
 import static ru.courses.parser.BubleSort.reverse;
 import static ru.courses.parser.Streams.getStringFromStream;
 import static ru.courses.parser.Streams.printList;
+import static ru.courses.parser.NullObj.setNullFilds;
 
 public class Main {
-    public static void main(String[] args)  {
+    public static void main(String[] args) throws NoSuchFieldException {
         ArrayList<Integer> list = new ArrayList<>();
         int n = 10;
 
@@ -45,6 +48,11 @@ public class Main {
 
         ArrayList<Integer> num = new ArrayList<>(List.of(1,2,3,4));
         printList(num);
+        List<String> friends = new ArrayList<>(List.of("vasya","murca","bur-ca"));
+        Cat cat1 = new Cat("vasya", 5, friends);
+        System.out.println(cat1);
+        setNullFilds(cat1);
+        System.out.println(cat1);
 
 
 
