@@ -1,50 +1,122 @@
 package ru.courses.parser;
 
+import ru.courses.parser.Statistics;
 import java.io.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 import java.util.Date;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class ParserLog {
-    private static final SimpleDateFormat dateFormat = new SimpleDateFormat("[dd/MMM/yyyy:HH:mm:ss Z]");
-
-    private String clientIpAddress;
-    private String dateTimeString;
-    //private String dateTime;
-    private String method;
-    private String resourcePath;
-    private int httpResponseCode;
-    private int dataByteSize;
-    private String referer;
+    private final String clientIpAddress;
+    private final String dateTimeString;
+    private LocalDateTime dateTime;
+    private enum HttpMethod {
+        GET,
+        POST,
+        PUT,
+        PATCH,
+        DELETE,
+        HEAD,
+        OPTIONS,
+        TRACE,
+        CONNECT
+    }
+    private HttpMethod method;
+    private final String resourcePath;
+    private final int httpResponseCode;
+    private final int dataByteSize;
+    private final String referer;
     private String userAgent;
-    private String bot;
 
     public ParserLog(String logEntry) throws ParseException {
-        // Разбиваем запись лога по пространству
         String[] parts = logEntry.split(" ");
 
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MMM/yyyy:HH:mm:ss", Locale.ENGLISH);
+
         this.clientIpAddress = parts[0];
-        // Пропущенные свойства не назначаются, так как они не используются
-        this.dateTimeString = parts[3] + " " + parts[4]; // склеиваем дату и время, [13/Dec/2018:17:00:00 -0500] формата
-        //this.dateTime = dateFormat.parse(this.dateTimeString); // преобразуем в объект Date
-        this.method = parts[5].substring(1); // убираем первую кавычку перед методом
+        this.dateTimeString = parts[3].substring(1);//+ " " + parts[4];
+        this.dateTime = LocalDateTime.parse(this.dateTimeString, formatter);
+        this.method = HttpMethod.GET;
+        switch (parts[5].substring(1)){
+            case "GET":
+                this.method = HttpMethod.GET;
+                break;
+            case "POST":
+                this.method = HttpMethod.POST;
+                break;
+            case "PUT":
+                this.method = HttpMethod.PUT;
+                break;
+            case "PATCH":
+                this.method = HttpMethod.PATCH;
+                break;
+            case "HEAD":
+                this.method = HttpMethod.HEAD;
+                break;
+            case "OPTIONS":
+                this.method = HttpMethod.OPTIONS;
+                break;
+            case "DELETE":
+                this.method = HttpMethod.DELETE;
+                break;
+            case "TRACE":
+                this.method = HttpMethod.TRACE;
+                break;
+
+        }
+
         this.resourcePath = parts[6];
         this.httpResponseCode = Integer.parseInt(parts[8]);
-        this.dataByteSize = parts[9].equals("-") ? 0 : Integer.parseInt(parts[9]); // если прочерк, считаем размер данных 0
-        this.referer = parts[10].substring(1, parts[10].length() - 1); // убираем кавычки вокруг referer
-        this.userAgent = parts[11].substring(1); // начинаем с 1, чтобы убрать кавычку
+        this.dataByteSize = parts[9].equals("-") ? 0 : Integer.parseInt(parts[9]);
+        this.referer = parts[10].substring(1, parts[10].length() - 1);
+        this.userAgent = parts[11].substring(1);
 
-        for (int i = 12; i < parts.length; i++) { // user-agent может содержать пробелы
+        for (int i = 12; i < parts.length; i++) {
             this.userAgent += " " + parts[i];
         }
-        this.userAgent = this.userAgent.substring(0, this.userAgent.length() - 1); // убираем последнюю кавычку
+        this.userAgent = this.userAgent.substring(0, this.userAgent.length() - 1);
 
-        for (int i = 12; i < this.userAgent.length(); i++) {
-            this.bot += extractFragment(this.userAgent);
-        }
 
+    }
+    public LocalDateTime getDateTime() {
+        return dateTime;
+    }
+
+    public String getClientIpAddress() {
+        return clientIpAddress;
+    }
+
+    public String getDateTimeString() {
+        return dateTimeString;
+    }
+
+    public HttpMethod getMethod() {
+        return method;
+    }
+
+    public String getResourcePath() {
+        return resourcePath;
+    }
+
+    public int getHttpResponseCode() {
+        return httpResponseCode;
+    }
+
+    public int getDataByteSize() {
+        return dataByteSize;
+    }
+
+    public String getReferer() {
+        return referer;
+    }
+
+    public String getUserAgent() {
+        return userAgent;
     }
 
     public String toString() {
@@ -52,9 +124,8 @@ public class ParserLog {
                 clientIpAddress, dateTimeString, method, resourcePath, httpResponseCode, dataByteSize, referer, userAgent);
     }
 
-    public String getUserAgent() {
-        return userAgent;
-    }
+
+
 
     public static void parse (String path) {
         FileReader fileReader = null;
@@ -73,6 +144,8 @@ public class ParserLog {
         int x = 0;
         int z1 = 0;
         int x1 = 0;
+        Statistics statistics = new Statistics();
+
 
         while (true) {
             try {
@@ -82,7 +155,10 @@ public class ParserLog {
             }
             try {
                 ParserLog entry = new ParserLog(line);
-                System.out.println(entry.userAgent);
+                UserAgent userAgent1 = new UserAgent(entry.userAgent);
+                statistics.addEntry(entry);
+                System.out.println(entry.toString());
+                //System.out.println(entry.dateTime+" "+entry.method+" "+entry.userAgent+" "+userAgent1.getOperatingSystem()+" "+userAgent1.getBrowser());
                 if(line.contains("YandexBot"))z++;
                 if(line.contains("Googlebot"))x++;
                 String bot = extractFragment(line);
@@ -102,6 +178,8 @@ public class ParserLog {
         System.out.println("Googlebot встречается в логе(contains) "+x);
         System.out.println("YandexBot встречается в логе(extractFragment) "+z1);
         System.out.println("Googlebot встречается в логе(extractFragment) "+x1);
+        System.out.println(statistics.toString());
+        System.out.println("колличество трафика за час - "+statistics.getTrafficRate()+" kb");
 
 
     }
