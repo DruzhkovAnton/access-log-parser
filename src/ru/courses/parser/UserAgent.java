@@ -16,7 +16,6 @@ public class UserAgent {
             this.operationSystem = "Other";
         }
 
-
         if (userAgent.contains("Edg") || userAgent.contains("Edge")) {
             this.browser = "Edge";
         } else if (userAgent.contains("Firefox")) {
