@@ -17,8 +17,6 @@ public class Statistics {
     static int totalVisits; // общее число визитов не ботов
     static int totalErrors; // общее число ошибочных запросов
     static Map<String, Integer> visitsByUser; // словарь для подсчета визитов по IP-адресам
-    DateTime firstLogTime; // время первого лога
-    DateTime lastLogTime; // время последнего лога
     static HashMap<String, Integer> staBrowser;
     public Statistics(){
         this.totalTrafic = 0;
