@@ -2,6 +2,7 @@ package ru.courses.parser;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
+import java.time.ZoneOffset;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -17,6 +18,10 @@ public class Statistics {
     static int totalVisits; // общее число визитов не ботов
     static int totalErrors; // общее число ошибочных запросов
     static Map<String, Integer> visitsByUser; // словарь для подсчета визитов по IP-адресам
+    private static Map<Integer, Integer> visitsPerSecond = new HashMap<>();
+    private HashSet<String> refererDomains = new HashSet<>();
+    static long timeStampMin;
+    static long timeStampMax;
     static HashMap<String, Integer> staBrowser;
     public Statistics(){
         this.totalTrafic = 0;
@@ -48,6 +53,9 @@ public class Statistics {
             totalVisits++; // Увеличиваем счетчик визитов
             // Добавляем посещение для данного IP
             visitsByUser.put(log.getClientIpAddress(), visitsByUser.getOrDefault(log.getClientIpAddress(), 0) + 1);
+            int second = (int)(localDateTimeToLong(log.getDateTime())/1000);
+            // Обновляем количество посещений в эту секунду
+            visitsPerSecond.put(second, visitsPerSecond.getOrDefault(second, 0) + 1);
         }
 
         if (log.getHttpResponseCode() >= 400 && log.getHttpResponseCode() < 600) { // Проверяем на ошибочный код ответа
@@ -71,6 +79,39 @@ public class Statistics {
         }else {
             staBrowser.put(os.getOperatingSystem(),1);
         }
+    }
+
+    public void logReferer(String referer) {//Метод для возврата списка сайтов, со страниц которых есть ссылки на текущий сайт:
+        // Отсекаем протокол и путь, оставляя только домен
+        String domain = referer.replaceFirst("^https?://", "") // Удалить протокол
+                .replaceFirst("/.*$", "");      // Удалить путь
+        // Добавляем домен в HashSet
+        refererDomains.add(domain);
+    }
+
+    public int calculateMaxVisitsBySingleUser() {//Метод расчёта максимальной посещаемости одним пользователем
+        int maxVisits = 0;
+        for (int visits : visitsByUser.values()) {
+            if (visits > maxVisits) {
+                maxVisits = visits;
+            }
+        }
+        return maxVisits;
+    }
+
+    public int calculatePeakVisitsPerSecond() {//Метод для расчёта пиковой посещаемости сайта (в секунду)
+        int maxVisits = 0;
+        for (int visits : visitsPerSecond.values()) {
+            if (visits > maxVisits) {
+                maxVisits = visits;
+            }
+        }
+        return maxVisits;
+    }
+
+    public static long localDateTimeToLong(LocalDateTime localDateTime) {
+        // Получение количества миллисекунд с начала эпохи для UTC
+        return localDateTime.toInstant(ZoneOffset.UTC).toEpochMilli();
     }
 
     public static HashMap<String, Double> calcStatOS(){
